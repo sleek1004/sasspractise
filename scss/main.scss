@@ -1,0 +1,124 @@
+@import "variables";
+@import "mixins";
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+div, span, ul, li, img, header, footer {
+    float: left;
+    box-sizing: border-box;
+}
+
+
+// .spoon {
+//     font-size: $smT; 
+//     width: 200px;
+//     height: 150px;
+//     background: $primaryClr;
+//     color: #fff;
+// }
+
+// .cup {
+//     background: $secondaryClr;
+//     color: #fff;
+//     padding: $bgPadding;
+//     width: 300px;
+//     height: 200px;
+//     font-size: $smT;
+// } 
+
+
+// nesting 
+ul.menu {
+    list-style-type: none;
+    &.cross {
+        font-size: 30px;
+    }
+
+    li {
+        color: $primaryClr;
+        a {
+            color: $secondaryClr;
+        }
+    }
+}
+
+// mixin
+
+// @mixin vox {
+//     width: 100px;
+//     height: 100px;
+// }
+
+// .red {
+//     @include vox;
+//     background: red;
+// }
+
+// .blue {
+//     @include vox;
+//     background: blue;
+// }
+
+// .green {
+//     @include vox;
+//     background: green;
+// }
+
+
+
+.com {
+    // @include crossBrowser(border-radius, 20px);
+    // @include square(170px);
+    @include circle(70px);
+    background: red;
+}
+
+.go {
+    @include crossBrowser(border-radius, 50px);
+    @include crossBrowser(transition, 30px);
+    @include rec(20px);
+}
+
+// inheritance
+
+%vox {
+    width: 100px;
+    height: 100px;
+}
+
+.red {
+    @extend %vox;
+    background: red;
+}
+
+.blue {
+    @extend %vox;
+    background: blue;
+}
+
+.green {
+    @extend %vox;
+    background: green;
+}
+
+.grid  {
+    width: 100%;
+    padding: 1% 2%;
+    .box {
+        height: 100px;
+        background: grayscale($primaryClr);
+        @include grid(5, 4%);
+        @include mediaQ(750px) {
+            width: 100%;
+        }
+    }
+
+    @include mediaQ(750px) {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,37 @@
+@mixin crossBrowser($property, $value) {
+    #{$property} : #{$value};
+    -moz-#{$property} : #{$value};
+    -webkit-#{$property} : #{$value};
+    -ms-#{$property} : #{$value};
+    -o-#{$property} : #{$value};
+}
+
+@mixin square($size) {
+    width: #{$size};
+    height: #{$size};
+}
+
+@mixin rec($height) {
+    width: $height * 2;
+    height: #{$height};
+}
+
+@mixin circle($width) {
+    @include square($width);
+    @include crossBrowser(border-radius, 50%);
+}
+
+@mixin grid($num, $spacing) {
+    margin-right: $spacing;
+    width: (100% - ($spacing * ($num - 1))) / $num;
+    &:nth-child(#{$num}n) {
+        margin-right: 0;
+    }
+}
+
+@mixin mediaQ($screenW) {
+    @media (max-width: #{$screenW}) {
+        @content;
+    }
+    
+}

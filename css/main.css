@@ -1,0 +1,92 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+div, span, ul, li, img, header, footer {
+  float: left;
+  box-sizing: border-box;
+}
+
+ul.menu {
+  list-style-type: none;
+}
+ul.menu.cross {
+  font-size: 30px;
+}
+ul.menu li {
+  color: #ff6678;
+}
+ul.menu li a {
+  color: #f5f676;
+}
+
+.com {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: red;
+}
+
+.go {
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  transition: 30px;
+  -moz-transition: 30px;
+  -webkit-transition: 30px;
+  -ms-transition: 30px;
+  -o-transition: 30px;
+  width: 40px;
+  height: 20px;
+}
+
+.red, .blue, .green {
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
+}
+
+.green {
+  background: green;
+}
+
+.grid {
+  width: 100%;
+  padding: 1% 2%;
+}
+.grid .box {
+  height: 100px;
+  background: #b3b3b3;
+  margin-right: 4%;
+  width: 16.8%;
+}
+.grid .box:nth-child(5n) {
+  margin-right: 0;
+}
+@media (max-width: 750px) {
+  .grid .box {
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .grid {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
